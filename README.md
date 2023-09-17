@@ -5,7 +5,13 @@
 
 # 개발도구
 - IntelliJ IDEA
-- Java 1.8
-- Thymeleaf
+- OpenJDK Java 1.8
 - MariaDB
-- Mybatis
+
+# 의존성
+- Spring Web
+- Spring Boot DevTools
+- Lombok
+- Thymeleaf
+- MariaDB Driver
+- Mybatis Framework
