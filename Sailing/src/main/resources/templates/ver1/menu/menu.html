@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html lang="ko">
+<!-- 타임리프 정의 -->
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Coffee Menu</title>
   <meta charset="utf-8">
@@ -24,7 +25,8 @@
 <div id="main" style="font-size:large; text-align: center; ">
 
   <div id="search" style="height: 150px;padding: 15px; font-size: small; width: 90%; margin-left: auto;  margin-right: auto;">
-    <h3>[ Coffee menu Management <span style="font-size:30px;">&#9749;</span> ]</h3>
+    <!--  타임리프로 데이터를 하나만 받기  -->
+    <h3>[ Coffee menu Management <span style="font-size:30px;">&#9749;</span> ]<th:block th:text="${hello}"></th:block></h3>
 
     <form name="fm_menu" autocomplete="on">
       <fieldset>
@@ -108,6 +110,20 @@
         <td>수정</td>
         <td>삭제</td>
       </tr>
+
+    <!--  타임리프로 데이터 여러개 받기  -->
+    <tr th:each="prod : ${list}">
+      <td>Chk</td>
+      <td th:text="${prod.get('no')}">커피No</td>
+      <td th:text="${prod.get('name')}">메뉴명</td>
+      <td th:text="${prod.get('kind')}">종류</td>
+      <td th:text="${prod.get('price')}">가격</td>
+      <td th:text="${prod.get('regDay')}">등록일</td>
+      <td th:text="${prod.get('modDay')}">수정일</td>
+      <td>수정</td>
+      <td>삭제</td>
+    </tr>
+
     </tbody>
   </table>
 </div>

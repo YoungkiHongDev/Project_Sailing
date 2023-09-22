@@ -1,4 +1,4 @@
-package com.boot.sailing.ver1;
+package com.boot.sailing.ver1.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
